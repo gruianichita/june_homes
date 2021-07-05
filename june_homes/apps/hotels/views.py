@@ -1,5 +1,5 @@
 from django.db import transaction
-from django.http import HttpResponse
+from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 
@@ -13,7 +13,7 @@ def like_hotel_view(request, hotel_id):
     with transaction.atomic():
         hotel.likes += 1
         hotel.save()
-        return HttpResponse({'details': 'success'})
+        return Response({'details': 'success'})
 
 
 @api_view(['POST'])
@@ -23,4 +23,4 @@ def dislike_hotel_view(request, hotel_id):
     with transaction.atomic():
         hotel.dislikes += 1
         hotel.save()
-        return HttpResponse({'details': 'success'})
+        return Response({'details': 'success'})
