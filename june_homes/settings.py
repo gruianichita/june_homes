@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'june_homes.apps.hotels',
     'june_homes.apps.reservations',
     'june_homes.apps.rooms',
+    'june_homes.apps.users',
 ]
 
 MIDDLEWARE = [
